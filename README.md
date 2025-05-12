@@ -1,5 +1,10 @@
-# knowledgebase
+# Finntegrate knowledge base
+
 Research and knowledge base for the Finntegrate project.
+
+## Contributing
+
+We welcome contributions to this knowledge base! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute.
 
 ## Licensing
 
