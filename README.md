@@ -2,6 +2,10 @@
 
 Research and knowledge base for the Finntegrate project.
 
+## Deployment
+
+This site is automatically deployed to GitHub Pages using GitHub Actions. When changes are pushed to the `main` branch, the site will be built and deployed to https://finntegrate.github.io/knowledgebase/.
+
 ## Contributing
 
 We welcome contributions to this knowledge base! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute.
