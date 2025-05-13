@@ -7,21 +7,35 @@ description: Finntegrate Project Charter
 
 ## Project Vision
 
-Finntegrate aims to create an accessible, multilingual support system for immigrants to Finland through the lens of information science and user-centered design. Drawing on research on task-based information seeking and information interaction, we will help immigrants navigate complex bureaucratic processes by understanding their information behaviors, identifying barriers, and facilitating effective information retrieval. By leveraging AI technology within an established information interaction framework, Finntegrate will provide personalized guidance tailored to each immigrant's specific situation, language, and information needs.
+Finntegrate aims to create an accessible, multilingual support system for immigrants to Finland through the lens of information science and user-centered design. Our mission is to help immigrants navigate complex bureaucratic processes by understanding their information behaviors, identifying barriers, and facilitating effective information retrieval.
+
+Key elements of our vision:
+
+* **Task-based information seeking** - Research-based understanding of how immigrants complete bureaucratic tasks
+* **Barrier identification** - Recognizing and addressing common obstacles in information access
+* **Information interaction framework** - Using established information science principles to guide system design
+* **AI-enhanced personalization** - Leveraging technology to provide guidance tailored to each immigrant's specific situation, language, and information needs
 
 ## Problem Statement: Information Interaction Challenges
 
-Immigrants to Finland face numerous information-seeking and interaction challenges:
+Immigrants to Finland face numerous information-seeking and interaction challenges that can be grouped into the following categories:
 
-* **Complex task-based information needs** arising from frequently changing bureaucratic processes
-* **Information literacy challenges** – difficulty understanding bureaucratic structures, terminology, and processes
-* **Digital information access barriers** affecting the ability to navigate online services
-* **Fragmented information environment** across multiple websites, government agencies (Migri, Kela, Vero, DVV, TE-services), and municipalities
-* **Limited information localization** in languages other than Finnish and Swedish
-* **High cognitive load during information seeking** requiring extensive research
-* **Information anxiety and uncertainty** affecting mental wellbeing during transition
+### Systemic Fragmentation
+* **Fragmented information landscape** - Information scattered across multiple websites and government agencies (Migri, Kela, Vero, DVV, TE-services)
+* **Complex bureaucratic processes** - Frequently changing requirements and procedures with interdependencies
+* **Cross-agency information gaps** - Lack of coordination between different government services
 
-These challenges can lead to delays in processing, misunderstandings, missed opportunities, and unnecessary hardship for immigrants. They can also result in increased workload for support workers and government agencies. 
+### Access Barriers
+* **Language limitations** - Insufficient information localization in languages beyond Finnish and Swedish
+* **Digital navigation obstacles** - Challenges in accessing and using online government services
+* **Information discovery problems** - Difficulty finding relevant information without prior system knowledge
+
+### Cognitive Barriers
+* **High cognitive load** - Need for extensive research and information synthesis across multiple sources
+* **Information anxiety** - Uncertainty and stress affecting mental wellbeing during transition
+* **Bureaucratic literacy challenges** - Difficulty understanding specialized terminology and administrative structures
+
+These challenges can lead to delays in processing, misunderstandings, missed opportunities, and unnecessary hardship for immigrants. They can also result in increased workload for support workers and government agencies.
 
 The information-related challenges stem from fundamental misalignments in information systems design:
 
@@ -39,39 +53,54 @@ Drawing on academic research, Finntegrate will apply established information sci
 * **Information Behavior Studies**: Researching how immigrants actually seek, find, and use information to inform system design
 * **Information Barriers Research**: Identifying and addressing contextual barriers in cross-cultural and multilingual information environments
 * **User-Centered Information Design**: Developing interfaces based on immigrants' actual information needs and behaviors
-* **Natural Language Interface Design**: Allowing immigrants to ask questions in their own words rather than requiring exact keywords or bureaucratic terminology
-* **Cross-Organizational Knowledge Integration**: Breaking down information silos between government agencies, civic organizations, and municipalities to provide a holistic view of immigrant information needs
+* **Designing Natural Language Interfaces**: Allowing immigrants to ask questions in their own words rather than requiring exact keywords or bureaucratic terminology
+* **Integrating Cross-Organizational Knowledge**: Breaking down information silos between government agencies, civic organizations, and municipalities to provide a holistic view of immigrant information needs
 
 By applying these frameworks, Finntegrate can provide significant value to immigrants navigating the Finnish system. The user focus ensures that information is presented in ways that match how immigrants actually think about and approach their settlement tasks, rather than how agencies organize their services.
 
 ## Strategic Opportunities
 
-* Applying information interaction research to real-world immigrant challenges
-* Designing information systems around immigrant tasks rather than bureaucratic processes
-* Addressing information fragmentation through task-based information integration
-* Enhancing information accessibility through multilingual interfaces informed by cross-language information retrieval research
-* Simplifying complex, bureaucratic language into clear, actionable information
-* Creating proactive assistive systems that anticipate immigrant information needs
+Our strategic opportunities are aligned with our primary objectives (referenced in parentheses) and ordered by priority:
+
+1. **Designing task-centered information systems** - Organizing information around immigrant tasks rather than bureaucratic processes (Objectives 3, 4)
+   
+2. **Enhancing multilingual accessibility** - Developing interfaces informed by cross-language information retrieval research to support diverse linguistic needs (Objectives 1, 2)
+   
+3. **Simplifying bureaucratic language** - Transforming complex terminology into clear, actionable information that reduces barriers to understanding (Objectives 2, 3)
+   
+4. **Integrating fragmented information** - Creating cohesive information pathways across siloed government services and resources (Objectives 3, 4)
+   
+5. **Applying information science research** - Leveraging academic frameworks in information behavior and task-based information seeking (Objectives 1, 4, 5)
+   
+6. **Developing proactive assistance** - Building systems that anticipate immigrant information needs based on common patterns and journey stages (Objectives 1, 3, 4)
 
 ## Project Objectives and Approach
 
 ### Primary Objectives
 
-1. Create a multilingual AI assistance tool that supports immigrants by understanding their information-seeking behaviors
-2. Reduce barriers to successful integration by providing clear, accessible information in users' native languages
-3. Help immigrants navigate complex tasks efficiently by breaking them into understandable, manageable steps
-4. Model immigrant tasks and their barriers to create more effective information paths
-5. Build a portfolio of GenAI prototypes that demonstrate our capabilities in this domain
+1. **Creating multilingual AI assistance** - Developing a tool that supports immigrants by understanding their information-seeking behaviors
+2. **Reducing integration barriers** - Providing clear, accessible information in users' native languages
+3. **Simplifying complex tasks** - Breaking bureaucratic processes into understandable, manageable steps
+4. **Modeling information journeys** - Mapping immigrant tasks and their barriers to create effective information paths
+
+### Secondary Objectives
+
+* **Developing specialized agents** - Offering domain-specific assistance for complex immigrant scenarios
+* **Simulating Migri interviews** - Building applicant confidence through realistic interview preparation
+* **Expanding information coverage** - Integrating resources beyond Migri to provide holistic guidance
+* **Personalizing guidance** - Tailoring information discovery to each immigrant's unique situation
+* **Enabling offline access** - Supporting information retrieval even with limited connectivity
+* **Creating visual guides** - Clarifying complex procedures with intuitive process maps
 
 ### Approach
 
-* **User-Centered Research**: Understand actual immigrant information behaviors while designing solutions
-* **Task-Based Analysis**: Map key immigrant information tasks, their stages, and common barriers
-* **Lean R&D**: Focus on working software over comprehensive documentation or prolonged development cycles
-* **Rapid Prototyping**: Create small, educational prototypes that can be replaced or improved
-* **Just-in-Time Learning**: Acquire skills and knowledge as needed during development
-* **Leveraging Personal Experience**: Build on our own experiences as information users in the migrant context
-* **Community-Based Testing**: Use the Tribe Tampere network for feedback and testing
+* **Conducting User-Centered Research**: Understanding actual immigrant information behaviors while designing solutions
+* **Mapping Task-Based Information Flows**: Identifying key immigrant information tasks, their stages, and common barriers
+* **Applying Lean R&D Principles**: Focusing on working software over comprehensive documentation or prolonged cycles
+* **Creating Rapid Prototypes**: Developing small, educational prototypes that can be replaced or improved
+* **Learning Just-in-Time**: Acquiring skills and knowledge as needed during development
+* **Drawing on Personal Experience**: Building on our own experiences as information users in the migrant context
+* **Testing with Community Members**: Engaging the Tribe Tampere network for feedback and validation
 
 ## Scope Definition and MVP Boundaries
 
@@ -87,26 +116,24 @@ By applying these frameworks, Finntegrate can provide significant value to immig
   * Simple logging for continual improvement of information quality
   * Source citations and links to official information sources
 
-### Secondary Objectives (After MVP)
-
-* Multi-agent orchestration for specialized information assistance
-* Migri interview preparation simulation based on information task analysis
-* Integration with additional information sources beyond Migri
-* Personalized information discovery based on immigrant profile/situation
-* Progressive web app capabilities for improved information accessibility
-* Visual information guides for key processes (such as a process map for residence permits)
-
 ### Explicitly Out of Scope
 
-* Integration with official systems or APIs
-* Document translation services
-* Automated form completion
-* Custom wizards for all processes
-* Legal advice or case-specific predictions
-* Processing or storing personal identifiable information (PII)
-* Features requiring sensitive data, like application numbers or personal codes
-* Case status tracking or application monitoring
-* Providing definitive immigration decisions or eligibility predictions
+* **Technical Integration**
+  * Integration with official government systems or APIs
+  * Case status tracking or application monitoring
+
+* **Personal Data**
+  * Processing or storing any personal identifiable information (PII)
+  * Features requiring sensitive data (application numbers, personal codes)
+
+* **Service Limitations**
+  * Document translation services
+  * Automated form completion or form filling
+
+* **Content Boundaries**
+  * Legal advice or eligibility predictions
+  * Immigration decision forecasting
+  * Case-specific recommendations
 
 ### Information Categories to Include
 
