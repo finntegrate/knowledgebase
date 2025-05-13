@@ -48,13 +48,13 @@ The information-related challenges stem from fundamental misalignments in inform
 
 Drawing on academic research, Finntegrate will apply established information science frameworks to address immigrant information challenges:
 
-* **Task-Based Information Seeking**: Understanding immigrant-centered information tasks and their stages, identifying barriers at each stage, and designing solutions that support successful task completion
-* **Interactive Information Retrieval**: Creating systems that allow for simple, natural dialogue between users and information resources
-* **Information Behavior Studies**: Researching how immigrants actually seek, find, and use information to inform system design
-* **Information Barriers Research**: Identifying and addressing contextual barriers in cross-cultural and multilingual information environments
-* **User-Centered Information Design**: Developing interfaces based on immigrants' actual information needs and behaviors
-* **Designing Natural Language Interfaces**: Allowing immigrants to ask questions in their own words rather than requiring exact keywords or bureaucratic terminology
-* **Integrating Cross-Organizational Knowledge**: Breaking down information silos between government agencies, civic organizations, and municipalities to provide a holistic view of immigrant information needs
+* **Task-Based Information Seeking** - Understanding immigrant-centered information tasks and their stages, identifying barriers at each stage, and designing solutions that support successful task completion
+* **Interactive Information Retrieval** - Creating systems that allow for simple, natural dialogue between users and information resources
+* **Information Behavior Studies** - Researching how immigrants actually seek, find, and use information to inform system design
+* **Information Barriers Research** - Identifying and addressing contextual barriers in cross-cultural and multilingual information environments
+* **User-Centered Information Design** - Developing interfaces based on immigrants' actual information needs and behaviors
+* **Designing Natural Language Interfaces** - Allowing immigrants to ask questions in their own words rather than requiring exact keywords or bureaucratic terminology
+* **Integrating Cross-Organizational Knowledge** - Breaking down information silos between government agencies, civic organizations, and municipalities to provide a holistic view of immigrant information needs
 
 By applying these frameworks, Finntegrate can provide significant value to immigrants navigating the Finnish system. The user focus ensures that information is presented in ways that match how immigrants actually think about and approach their settlement tasks, rather than how agencies organize their services.
 
@@ -174,11 +174,11 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 
 ### Technical Success
 
-* Functional information retrieval system with relevant retrievals
-* Multilingual information access implementation
-* Information update pipeline established
-* Open-source repository with documentation
-* Proper security and privacy protections
+* **Effective information retrieval** - Functional system delivering relevant information responses
+* **Multilingual capabilities** - Implementation of cross-language information access features
+* **Sustainable maintenance** - Established pipeline for regular information updates
+* **Documentation excellence** - Comprehensive open-source repository with clear documentation
+* **Privacy-first design** - Proper security protections and privacy-preserving architecture
 
 ### User Success (Based on Information Interaction Metrics)
 
@@ -323,11 +323,11 @@ These roles are distributed between the two collaborators based on expertise, in
 
 ## Lessons from Previous Digital Initiatives (Through Information Science Lens)
 
-* **Focus on user information tasks**: Prioritize understanding real immigrant information needs and tasks
-* **Build and maintain information trust**: Ensure information reliability and transparency in all responses
-* **Manage information expectations**: Clearly communicate the system's information capabilities and limitations
-* **Avoid sensitive information handling**: Be cautious with features involving personal data
-* **Continuous information improvement**: Plan for ongoing development based on observed information behavior
+* **Focus on user information tasks** - Prioritize understanding real immigrant information needs and tasks
+* **Build and maintain information trust** - Ensure information reliability and transparency in all responses
+* **Manage information expectations** - Clearly communicate the system's information capabilities and limitations
+* **Avoid sensitive information handling** - Be cautious with features involving personal data
+* **Continuous information improvement** - Plan for ongoing development based on observed information behavior
 
 ## Constraints and Assumptions
 
