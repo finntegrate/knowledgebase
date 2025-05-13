@@ -291,12 +291,18 @@ This roadmap provides a granular view of our progress and planned work:
 
 ### Team Structure
 
-**2 part-time collaborators** sharing responsibilities across:
+**2 part-time collaborators** sharing responsibilities across key project domains. The table below outlines specific roles and their associated responsibilities:
 
-* Information needs analysis and requirements
-* Technical development
-* User testing coordination
-* Documentation
+| Role                      | Primary Responsibilities                                                                             | Secondary Responsibilities                                                                     |
+| ------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| **Information Architect** | • Information needs analysis<br>• User task mapping<br>• Information barrier identification          | • User testing coordination<br>• Documentation review<br>• Community outreach                  |
+| **Technical Lead**        | • RAG pipeline development<br>• Vector database management<br>• Information retrieval implementation | • Information scraping<br>• Infrastructure management<br>• API development                     |
+| **UX Researcher**         | • User testing design<br>• Information journey mapping<br>• Usability evaluation                     | • Multilingual support implementation<br>• User documentation<br>• Information organization    |
+| **Content Strategist**    | • Knowledge base organization<br>• Information quality assurance<br>• Source documentation           | • Information update scheduling<br>• Terminology management<br>• Content localization guidance |
+| **Project Coordinator**   | • Roadmap management<br>• Task prioritization<br>• Progress documentation                            | • Stakeholder communication<br>• Community feedback collection<br>• Resource planning          |
+
+These roles are distributed between the two collaborators based on expertise, interest, and project phase requirements. Each collaborator takes primary responsibility for multiple roles at different stages of development.
+
 
 ### Technical Resources
 
@@ -367,6 +373,3 @@ This roadmap provides a granular view of our progress and planned work:
 * **Learning Documentation**: Record of information behavior findings and outcomes
 * **Future Opportunities**: List of potential extensions or improvements to the information system
 * **Strategic Context Map**: Overview of the Finnish immigration information ecosystem to guide development
-
-
-
