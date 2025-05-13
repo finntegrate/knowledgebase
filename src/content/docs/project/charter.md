@@ -119,7 +119,7 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 ### Explicitly Out of Scope
 
 * **Technical Integration**
-  * Integration with official government systems or APIs
+  * Connection with official government systems or APIs
   * Case status tracking or application monitoring
 
 * **Personal Data**
