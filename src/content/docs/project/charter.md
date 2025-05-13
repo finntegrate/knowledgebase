@@ -1,15 +1,17 @@
 ---
-title: Project Charter
+title: Finntegrate Project Charter
 description: Finntegrate Project Charter
 ---
 
-# Finntegrate Project Charter
+Finntegrate aims to create an accessible, multilingual support system for immigrants to Finland through the lens of information science and user-centered design. 
+
+## Project Mission
+
+Our mission is to help immigrants navigate complex bureaucratic processes by understanding their information behaviors, identifying barriers, and facilitating effective information retrieval.
 
 ## Project Vision
 
-Finntegrate aims to create an accessible, multilingual support system for immigrants to Finland through the lens of information science and user-centered design. Our mission is to help immigrants navigate complex bureaucratic processes by understanding their information behaviors, identifying barriers, and facilitating effective information retrieval.
-
-Key elements of our vision:
+Finntegrate envisions a future where immigrants in Finland have seamless access to the information and services they need to thrive. Key elements of our vision:
 
 * **Task-based information seeking** - Research-based understanding of how immigrants complete bureaucratic tasks
 * **Barrier identification** - Recognizing and addressing common obstacles in information access
