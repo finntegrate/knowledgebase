@@ -137,17 +137,28 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 
 ### Information Categories to Include
 
-* Residence permit processes (links to migri.fi)
-* Reference to existing services like finnishcourses.fi
-* Community resources and support groups
-* Links to established housing and job search platforms
-* Basic information about banking and other practical needs
-* Key stakeholder organizations and their roles
-* Critical registration processes and administrative codes, including:
+#### Government and Legal Processes
+* **Residence permits** - Application processes and requirements (links to migri.fi)
+* **Essential registrations**:
   * DVV registration (Digital and Population Data Services Agency)
   * Personal identity code (henkilötunnus) - essential for accessing most Finnish services
   * Municipality of residence registration (kotikunta) - required for accessing municipal services
   * Tax identification procedures (tax card/verokortti) - needed for employment
+
+#### Education and Integration
+* **Language learning** - Finnish and Swedish courses (links to finnishcourses.fi)
+* **Skills recognition** - Information about validating foreign qualifications
+
+#### Community Support Networks
+* **Local immigrant communities** - Cultural groups and networking opportunities
+* **Support organizations** - NGOs and services specifically for immigrants
+* **Key stakeholder organizations** - Government entities and their respective roles
+
+#### Practical Living Essentials
+* **Housing resources** - Apartment search platforms and tenant rights
+* **Employment information** - Job portals and work permit requirements
+* **Banking and finances** - Setting up accounts and managing finances in Finland
+* **Healthcare access** - Basic information on the Finnish healthcare system
 
 ## Stakeholders and Community
 
@@ -168,28 +179,29 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 * Information update pipeline established
 * Open-source repository with documentation
 * Proper security and privacy protections
-* Clearly defined API boundaries
 
 ### User Success (Based on Information Interaction Metrics)
 
-* Positive feedback on information relevance from test users
-* Demonstrated reduction in time spent on information-seeking tasks
-* Reported reduction in confusion about information processes
-* Successful navigation to appropriate official information resources
-* Lower information anxiety and increased confidence in task completion
-* Clear understanding of system information capabilities and limitations
+* **High information relevance** - Users report finding precisely what they need
+* **Improved task efficiency** - Users complete information tasks more quickly
+* **Enhanced process understanding** - Users gain clarity about bureaucratic procedures
+* **Effective resource discovery** - Users successfully locate official information resources
+* **Increased confidence** - Users experience greater certainty during their integration journey
+* **Clear service expectations** - Users understand the system's capabilities and limitations
 
 ### Project Success
 
-* Portfolio of working GenAI prototypes grounded in information science principles
-* Documented learning outcomes on immigrant information behavior
-* Technical skills development for team members
-* Foundation for potential future funded development
-* Avoidance of issues that affected previous tools like Migri's Kamu chatbot
+* **Practical innovation** - Creating working GenAI prototypes grounded in information science principles
+* **Knowledge advancement** - Generating valuable insights on immigrant information behavior
+* **Team growth** - Developing new technical and research capabilities among team members
+* **Future viability** - Establishing a foundation for potential funded expansion
+* **Design excellence** - Implementing best practices that improve upon previous similar tools
 
-## Project Methodology: User-Centered Information System Design
+## Project Methodology and Implementation Plan
 
-### Discovery Phase (✓ Mostly Completed)
+Our implementation follows a user-centered information system design approach divided into phases. Each phase targets specific aspects of information discovery, retrieval, and interaction. Below are the methodology phases followed by a detailed roadmap with implementation status for specific deliverables.
+
+### Discovery Phase **✓ Mostly Completed**
 
 * Catalog existing information resources and sources
 * Map key immigrant information tasks based on personal experience
@@ -197,16 +209,16 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 * Set up development environment and collaboration tools
 * Research previous digital initiatives in the Finnish immigration space
 
-### Prototyping Cycles (Current Focus)
+### Prototyping Cycles **⟳ Current Focus**
 
-* **Core Information Retrieval System (✓ Completed)**
+* **Core Information Retrieval System ✓ Completed**
   * Web scraping official information resources
   * Building a vector database with task-relevant metadata
   * Implementing information retrieval mechanisms
   * Creating a basic information interaction interface
   * Adding initial multilingual information support
 
-* **Enhanced Information Capabilities (Current Focus)**
+* **Enhanced Information Capabilities ⟳ Current Focus**
   * User task analysis and information journey mapping
   * Multi-agent system development for complex information tasks
   * Specialized information agents for specific immigrant scenarios
@@ -216,7 +228,7 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
   * Developing an orchestration platform for information updates (scheduled crawlers)
   * User testing of information interaction patterns
 
-* **Organizational Development (Current Focus)**
+* **Organizational Development ⟳ Current Focus**
   * Finalize project charter with information science framework
   * Develop a structured GitHub backlog and issue tracking
   * Create online presence (project website)
@@ -224,24 +236,56 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
   * Outreach to potential partner organizations, such as International House Tampere
   * Create and distribute a user survey for information needs assessment
 
-### Testing & Refinement (Upcoming)
+### Testing & Refinement **◯ Upcoming**
 
 * Gather feedback on information design from the Tribe Tampere community
 * Refine based on observed information-seeking patterns
 * Document information barriers and future opportunities
 * Prepare final demonstration and documentation
 
-## Revised Timeline
+## Project Roadmap: Implementation Status
 
-| Phase                                        | Duration  | Focus                                                                                              | Status           |
-| :------------------------------------------- | :-------- | :------------------------------------------------------------------------------------------------- | :--------------- |
-| Setup & Information Discovery                | 1 week    | Information resource mapping, environment setup, and initial requirements                          | Mostly Completed |
-| Core Information Retrieval Development       | 1 week    | Web scraping, vector database, basic retrieval, chat interface                                     | Completed        |
-| Enhanced Information Features                | 2-3 weeks | Task modeling, multi-agent system, expanded knowledge base, specialized agents, data orchestration | In Progress      |
-| Organizational Development                   | 2 weeks   | Project charter, backlog development, online presence, stakeholder outreach                        | In Progress      |
-| Information Architecture Refinement          | 2 weeks   | Frontend/backend separation, API development, improved UI based on user research                   | Planned          |
-| User Testing & Information Behavior Research | 2 weeks   | User survey, feedback gathering, and community testing                                             | Planned          |
-| Documentation & Refinement                   | 1 week    | Final documentation and handover preparation                                                       | Planned          |
+Below is our detailed roadmap with specific deliverables mapped to the methodology phases above, each marked with its current implementation status:
+
+* **✓** = Completed
+* **⟳ In Progress** = Currently being worked on 
+* **◯ Planned** = Scheduled for future implementation
+
+This roadmap provides a granular view of our progress and planned work:
+
+### Discovery Phase Roadmap
+
+1. **✓** Set up a GitHub [repository](https://github.com/finntegrate/migri-assistant) and [project structure](https://github.com/orgs/finntegrate/projects/1)
+2. **✓** Catalog existing information resources and sources
+3. **✓** Create an initial information scraping and processing prototype
+4. **✓** Establish a basic information retrieval pipeline with test queries
+5. **✓** Build a simple information interaction interface prototype
+
+### Prototyping Cycles Roadmap
+
+#### Core Information System
+6. **⟳ In Progress** Conduct task-based analysis of immigrant information needs
+7. **⟳ In Progress** Expand the RAG pipeline to use purpose-specific information agents
+8. **⟳ In Progress** Create a data orchestration platform for scheduled information updates
+
+#### Organizational Development
+9. **⟳ In Progress** Develop project documentation and online presence
+10. **⟳ In Progress** Establish connections with potential partner organizations
+11. **◯ Planned** Research Finnish government AI guidance and initiatives related to administrative support
+12. **◯ Planned** Begin pragmatic outreach to strategic partners like Migri
+13. **◯ Planned** Create and distribute a user survey for information needs assessment
+
+#### Technical Enhancement
+14. **◯ Planned** Develop a specialized Migri Interview Simulation prototype based on task analysis
+15. **◯ Planned** Evaluate architecture for frontend/backend separation
+16. **◯ Planned** Implement improved UI with SvelteKit based on information interaction research
+17. **◯ Planned** Develop a dedicated API with FastAPI
+
+### Testing & Refinement Roadmap
+18. **◯ Planned** Conduct user testing of information-seeking patterns with the Tribe Tampere community
+19. **◯ Planned** Document information behavior findings and barriers encountered
+20. **◯ Planned** Prepare final demonstration materials and comprehensive documentation
+21. **◯ Planned** Reach out to academic researcher(s) for potential research collaboration or advisory input
 
 ## Resource Approach
 
@@ -313,7 +357,7 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 * **Communication**: Asynchronous via messaging, weekly in-person sync
 * **Development**: Individual work with regular code reviews
 * **Documentation**: Ongoing in GitHub and Google Workspace
-* **Decision Making**: Collaborative with a focus on learning outcomes
+* **Decision-Making**: Collaborative with a focus on learning outcomes
 * **Code**: Open-source with appropriate licensing
 
 ## Documentation Strategy
@@ -324,26 +368,5 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 * **Future Opportunities**: List of potential extensions or improvements to the information system
 * **Strategic Context Map**: Overview of the Finnish immigration information ecosystem to guide development
 
-## Next Steps
 
-1. (✓) Set up a GitHub [repository](https://github.com/finntegrate/migri-assistant) and [project structure](https://github.com/orgs/finntegrate/projects/1)
-2. (✓) Catalog existing information resources and sources
-3. (✓) Create an initial information scraping and processing prototype
-4. (✓) Establish a basic information retrieval pipeline with test queries
-5. (✓) Build a simple information interaction interface prototype
-6. (In Progress) Conduct task-based analysis of immigrant information needs
-7. (In Progress) Expand the RAG pipeline to use purpose-specific information agents
-8. (In Progress) Create a data orchestration platform for scheduled information updates
-9. (In Progress) Develop project documentation and online presence
-10. (In Progress) Establish connections with potential partner organizations
-11. (Planned) Research Finnish government AI guidance and initiatives related to administrative support
-12. (Planned) Begin pragmatic outreach to strategic partners like Migri
-13. (Planned) Create and distribute a user survey for information needs assessment
-14. (Planned) Develop a specialized Migri Interview Simulation prototype based on task analysis
-15. (Planned) Evaluate architecture for frontend/backend separation
-16. (Planned) Implement improved UI with SvelteKit based on information interaction research
-17. (Planned) Develop a dedicated API with FastAPI
-18. (Planned) Conduct user testing of information-seeking patterns and gather feedback
-19. (Planned) Document information behavior findings and prepare for expanded development
-20. (Planned) Reach out to academic researcher(s) for potential research collaboration or advisory input
 
