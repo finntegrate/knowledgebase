@@ -17,6 +17,7 @@ Finntegrate envisions a future where immigrants in Finland have seamless access 
 * **Barrier identification** - Recognizing and addressing common obstacles in information access
 * **Information interaction framework** - Using established information science principles to guide system design
 * **AI-enhanced personalization** - Leveraging technology to provide guidance tailored to each immigrant's specific situation, language, and information needs
+* **Cultural connection through multi-agent design** - Creating a system that both honors Finnish cultural heritage and provides specialized expertise through our Tapio approach
 
 ## Problem Statement: Information Interaction Challenges
 
@@ -93,6 +94,7 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 * **Personalizing guidance** - Tailoring information discovery to each immigrant's unique situation
 * **Enabling offline access** - Supporting information retrieval even with limited connectivity
 * **Creating visual guides** - Clarifying complex procedures with intuitive process maps
+* **Developing specialized agents** - Offering domain-specific assistance for complex immigrant scenarios through our Tapio multi-agent system, where each agent specializes in a different aspect of the immigration experience
 
 ### Approach
 
@@ -103,6 +105,7 @@ Our strategic opportunities are aligned with our primary objectives (referenced 
 * **Learning Just-in-Time**: Acquiring skills and knowledge as needed during development
 * **Drawing on Personal Experience**: Building on our own experiences as information users in the migrant context
 * **Testing with Community Members**: Engaging the Tribe Tampere network for feedback and validation
+* **Creating Cultural Connections**: Designing our system with meaningful ties to Finnish culture, making immigrants' first interactions with Finnish systems more welcoming
 
 ## Scope Definition and MVP Boundaries
 
