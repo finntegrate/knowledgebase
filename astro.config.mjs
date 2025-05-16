@@ -4,8 +4,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://finntegrate.github.io',
-	base: 'knowledgebase',
+	site: 'https://docs.finntegrate.org',
 	integrations: [
 		starlight({
 			title: 'Finntegrate Docs',
