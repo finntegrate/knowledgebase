@@ -368,10 +368,3 @@ These roles are distributed between the two collaborators based on expertise, in
 * **Decision-Making**: Collaborative with a focus on learning outcomes
 * **Code**: Open-source with appropriate licensing
 
-## Documentation Strategy
-
-* **Technical Documentation**: GitHub repository with setup instructions
-* **User Documentation**: A Simple website explaining the project and information capabilities
-* **Learning Documentation**: Record of information behavior findings and outcomes
-* **Future Opportunities**: List of potential extensions or improvements to the information system
-* **Strategic Context Map**: Overview of the Finnish immigration information ecosystem to guide development
