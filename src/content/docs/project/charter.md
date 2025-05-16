@@ -47,6 +47,26 @@ The information-related challenges stem from fundamental misalignments in inform
 * Information silos between organizations, forcing immigrants to piece together complex information
 * User interfaces designed from the perspective of information providers rather than information users
 
+## The Tapio Approach: A Cultural Framework for Information Assistance
+
+To address these information challenges while creating a meaningful connection to Finnish culture, we've developed the Tapio approach to information assistance. Named after the Finnish forest god who provides wisdom and guidance, our system combines advanced information retrieval with a culturally significant design.
+
+### Core Principles
+
+1. **Specialized Knowledge Domains**: Rather than a one-size-fits-all assistant, Tapio provides access to specialized information guides, each with deep expertise in specific domains like immigration processes, social services, or healthcare.
+2. **Cultural Significance**: Each specialized component is named after a figure from Finnish mythology or cultural history, creating a cohesive system that honors Finland's heritage while providing practical information assistance.
+3. **Coordinated Information Retrieval**: Tapio serves as both the system name and the main orchestrator that directs users to specialized information domains based on their needs.
+4. **Unified User Experience**: While working with different specialized guides, users experience a consistent interface and seamless transitions between information domains.
+
+This approach addresses information fragmentation by organizing specialized knowledge while creating a more welcoming, culturally-rooted experience for newcomers to Finland. The Tapio multi-agent system allows us to provide both breadth and depth of information without overwhelming users.
+
+### User Experience Benefits
+
+- **Reduced cognitive load** - Information is presented through the most relevant specialist rather than all at once
+- **Cultural orientation** - Immigrants begin learning about Finnish cultural elements through their interactions with the system
+- **Clear expertise boundaries** - Users understand which guide specializes in what information domain
+- **Consistent information voice** - All guides maintain our clear, supportive tone when providing information
+
 ## Information Interaction Framework
 
 Drawing on academic research, Finntegrate will apply established information science frameworks to address immigrant information challenges:
@@ -225,8 +245,9 @@ Our implementation follows a user-centered information system design approach di
 
 * **Enhanced Information Capabilities ⟳ Current Focus**
   * User task analysis and information journey mapping
-  * Multi-agent system development for complex information tasks
-  * Specialized information agents for specific immigrant scenarios
+  * Tapio multi-agent system development for complex information tasks
+  * Specialized information agents with distinct domains (immigration, employment, social services, etc.)
+  * Integration of Finnish cultural elements to create a more meaningful user experience
   * Expanded knowledge base integration across information silos
   * Improved multilingual information retrieval capabilities
   * Frontend/backend separation for scalability
