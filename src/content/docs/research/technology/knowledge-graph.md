@@ -1,5 +1,5 @@
 ---
-title: Knowledge Graph Implementation for Enhanced Immigrant Support Services in Finland
+title: Knowledge Graph
 description: This document outlines the technical implementation strategy for a knowledge graph system to enhance the Finntegrate project, focusing on Finnish government documentation and multilingual support.
 ---
 
