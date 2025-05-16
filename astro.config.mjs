@@ -20,7 +20,12 @@ export default defineConfig({
 				},
 				{
 					label: 'Research',
-					autogenerate: { directory: 'research' },
+					items: [
+						// Each item here is one entry in the navigation menu.
+						{ label: 'Immigrant Journey', autogenerate: { directory: 'research/immigrant-journey' }, },
+						{ label: 'Information Landscape', autogenerate: { directory: 'research/information-landscape' }, },
+						{ label: 'Technology', autogenerate: { directory: 'research/technology' }, },
+					],
 				},
 			],
 		}),
