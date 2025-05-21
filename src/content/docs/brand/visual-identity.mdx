@@ -1,0 +1,193 @@
+---
+title: Visual Identity Guidelines
+description: Brand colors, typography, and styling guidelines for the Finntegrate project
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import ColorChip from "../../../components/ColorChip.astro";
+
+These guidelines ensure consistent visual representation across all Finntegrate materials. Following these standards helps establish a cohesive brand identity that reflects our mission of providing clear, accessible support to immigrants navigating Finnish bureaucracy.
+
+For examples of different ways to specify colors using our component, see the [Color Usage Examples](/brand/color-examples) page.
+
+## Brand Colors
+
+Our color palette is inspired by Finland's natural landscape and cultural heritage, combining traditional Finnish colors with an accessible, modern approach.
+
+### Primary Colors
+
+<div class="color-grid">
+  <ColorChip
+    name="Nordic Blue"
+    color="#0053A5"
+    description="Main brand color, used for primary elements, headers, and key messaging"
+  />
+  <ColorChip
+    name="White Snow"
+    color="#FFFFFF"
+    description="Background color for most applications, representing clarity and simplicity"
+  />
+  <ColorChip
+    name="Midnight Forest"
+    color="#263238"
+    description="Used for text and key UI elements requiring emphasis"
+  />
+</div>
+
+### Secondary Colors
+
+<div class="color-grid">
+  <ColorChip
+    name="Lake Blue"
+    color="#76B7ED"
+    description="Used for supporting elements, backgrounds, and highlights"
+  />
+  <ColorChip
+    name="Birch Bark"
+    color="#F5F5F5"
+    description="Secondary background color, used for content separation"
+  />
+  <ColorChip
+    name="Forest Green"
+    color="#155724"
+    description="Used for success messages and environmental themes"
+  />
+</div>
+
+### Accent Colors
+
+<div class="color-grid">
+  <ColorChip
+    name="Aurora Red"
+    color="#E57373"
+    description="Used sparingly for alerts, errors, and important notifications"
+  />
+  <ColorChip
+    name="Amber Gold"
+    color="#FFD54F"
+    description="Used for highlights, warnings, and special elements"
+  />
+  <ColorChip
+    name="Berry Purple"
+    color="#7B1FA2"
+    description="Used for special features and selected states"
+  />
+</div>
+
+### Color Usage
+
+<Tabs>
+  <TabItem label="Digital Applications">
+    - Use Nordic Blue for main navigation, buttons, and key UI elements - Text
+    should be Midnight Forest on light backgrounds, White Snow on dark
+    backgrounds - Links should be Lake Blue, changing to Nordic Blue on hover -
+    Reserve accent colors for notifications and interactive elements
+  </TabItem>
+  <TabItem label="Print Materials">
+    - Nordic Blue serves as the primary identifier - Large areas can use Birch
+    Bark or White Snow as backgrounds - Lake Blue works well for supporting
+    graphic elements - Use color sparingly and purposefully
+  </TabItem>
+  <TabItem label="Accessibility">
+    - Maintain WCAG 2.1 AA contrast standards (minimum 4.5:1 for normal text) -
+    Never use color as the only indicator of meaning - Provide sufficient
+    contrast between text and backgrounds - Test color combinations with
+    accessibility tools
+  </TabItem>
+</Tabs>
+
+## Persona Colors
+
+Our multi-agent system features personas inspired by Finnish mythology. Each has a distinct color identity while remaining harmonious with our brand palette.
+
+### Tapio: The Orchestrator
+
+<div class="color-grid">
+  <ColorChip
+    name="Forest Guardian"
+    color="#2E7D32"
+    description="Primary color representing Tapio's forest domain"
+  />
+  <ColorChip
+    name="Pine Needle"
+    color="#81C784"
+    description="Secondary color for Tapio elements"
+  />
+  <ColorChip
+    name="Moss Accent"
+    color="#388E3C"
+    description="Accent color for Tapio interactive elements"
+  />
+</div>
+
+### Ilmarinen: The Craftsman
+
+<div class="color-grid">
+  <ColorChip
+    name="Smith's Iron"
+    color="#455A64"
+    description="Primary color representing Ilmarinen's smithing"
+  />
+  <ColorChip
+    name="Forge Silver"
+    color="#B0BEC5"
+    description="Secondary color for Ilmarinen elements"
+  />
+  <ColorChip
+    name="Ember Glow"
+    color="#FF8A65"
+    description="Accent color representing the forge fire"
+  />
+</div>
+
+{/* Add more personas as needed */}
+
+## Typography
+
+Our typography choices prioritize clarity and accessibility, supporting our mission of making information easily understandable.
+
+### Primary Font: Inter
+
+Inter is our primary typeface for all digital and print applications. Its clean, modern design ensures readability across multiple languages and devices.
+
+```css
+/* Example usage */
+font-family: "Inter", sans-serif;
+```
+
+### Font Weights
+
+- **Regular (400)**: Primary body text
+- **Medium (500)**: Subheadings and emphasis
+- **SemiBold (600)**: Section headings and UI elements
+- **Bold (700)**: Main headings and key information
+
+### Typography Hierarchy
+
+- **H1**: 32px/2rem, Inter Bold, used for page titles
+- **H2**: 24px/1.5rem, Inter SemiBold, used for major sections
+- **H3**: 20px/1.25rem, Inter SemiBold, used for subsections
+- **Body**: 16px/1rem, Inter Regular, used for main content
+- **Small/Caption**: 14px/0.875rem, Inter Regular, used for supplementary information
+
+## Logo Guidelines
+
+[Logo guidelines will be added in a future update]
+
+## Visual Elements
+
+### Iconography
+
+- Use simple, clear line icons with consistent stroke width
+- Keep icons accessible by maintaining a minimum size of 24x24 pixels
+- Use Nordic Blue as the primary icon color, with accent colors used sparingly
+
+### Illustration Style
+
+- Illustrations should be simple, clear, and supportive of the content
+- Use a consistent style inspired by Finnish design tradition
+- Maintain a balanced color palette drawing from our brand colors
+
+## Implementation
+
+[Additional implementation guidelines will be added as the project develops]
