@@ -16,17 +16,20 @@ This is a knowledge base for the Finntegrate project built with [Astro](https://
 ### Setup
 
 1. Clone the repository
+
    ```bash
    git clone https://github.com/Finntegrate/knowledgebase.git
    cd knowledgebase
    ```
 
 2. Install dependencies
+
    ```bash
    pnpm install
    ```
 
 3. Run the development server
+
    ```bash
    pnpm run dev
    ```
@@ -36,6 +39,7 @@ This is a knowledge base for the Finntegrate project built with [Astro](https://
 ## Development Workflow
 
 1. Create a new branch for your changes
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -43,11 +47,13 @@ This is a knowledge base for the Finntegrate project built with [Astro](https://
 2. Make your changes to the documentation or code
 
 3. Preview your changes locally with:
+
    ```bash
    pnpm run dev
    ```
 
 4. Commit your changes
+
    ```bash
    git add .
    git commit -m "Description of your changes"

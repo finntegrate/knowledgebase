@@ -1,0 +1,389 @@
+---
+title: Visual Identity Guidelines
+description: Brand colors, typography, and styling guidelines for the Finntegrate project
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import ColorChip from '../../../components/ColorChip.astro';
+import {
+  primaryColors,
+  secondaryColors,
+  accentColors,
+  tapioColors,
+  ilmarinenColors,
+  sampoColors,
+  pellervoColors,
+  rauniColors,
+  otsoColors,
+  agricolaColors,
+  louhiColors,
+  mielikkiColors,
+  lempiColors,
+  ahtiColors,
+  kokkoColors,
+} from '../../../data/brandColors.js';
+
+These guidelines ensure consistent visual representation across all Finntegrate materials. Following these standards helps establish a cohesive brand identity that reflects our mission of providing clear, accessible support to immigrants navigating Finnish bureaucracy.
+
+## Brand Colors
+
+Our color palette is inspired by Finland's natural landscape and cultural heritage, combining traditional Finnish colors with an accessible, modern approach.
+
+### Primary Colors
+
+<div class="color-grid">
+  {primaryColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Secondary Colors
+
+<div class="color-grid">
+  {secondaryColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Accent Colors
+
+<div class="color-grid">
+  {accentColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Color Usage
+
+<Tabs>
+  <TabItem label="Digital Applications">
+    <ul>
+      <li>Use Nordic Blue for main navigation, buttons, and key UI elements</li>
+      <li>Text should be Midnight Forest on light backgrounds, White Snow on dark backgrounds</li>
+      <li>Links should be Lake Blue, changing to Nordic Blue on hover</li>
+      <li>Reserve accent colors for notifications and interactive elements</li>
+    </ul>
+  </TabItem>
+  <TabItem label="Print Materials">
+    <ul>
+      <li>Nordic Blue serves as the primary identifier</li>
+      <li>Large areas can use Birch Bark or White Snow as backgrounds</li>
+      <li>Lake Blue works well for supporting graphic elements</li>
+      <li>Use color sparingly and purposefully</li>
+    </ul>
+  </TabItem>
+  <TabItem label="Accessibility">
+    <ul>
+      <li>
+        Maintain WCAG 2.1 AA contrast standards (minimum 4.5:1 for normal text, 3:1 for large text).
+      </li>
+      <li>
+        For example, "Nordic Blue" (#0053A5) on "White Snow" (#FFFFFF) has a contrast ratio of
+        7.55:1, which is excellent and meets AA and AAA guidelines.
+      </li>
+      <li>
+        Conversely, "Lake Blue" (#76B7ED) on "White Snow" (#FFFFFF) has a contrast ratio of 2.15:1.
+        This combination is not acceptable for text at any size as it fails both the AA standard for
+        normal-sized body text (4.5:1) and large text (3:1).
+      </li>
+      <li>Never use color as the only indicator of meaning.</li>
+      <li>Provide sufficient contrast between text and backgrounds.</li>
+      <li>Test color combinations with accessibility tools to ensure compliance.</li>
+    </ul>
+  </TabItem>
+</Tabs>
+
+:::danger[Accessibility Compliance]
+Always verify your color combinations meet accessibility standards. Tools like the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) can help ensure compliance.
+
+Remember that:
+
+- Text must have a contrast ratio of at least 4.5:1 (AA) or 7:1 (AAA)
+- Large text (18pt+) must have a contrast ratio of at least 3:1 (AA) or 4.5:1 (AAA)
+- Interactive elements must have a contrast ratio of at least 3:1 against adjacent colors
+  :::
+
+## Persona Colors
+
+Our multi-agent system features personas inspired by Finnish mythology. Each has a distinct color identity while remaining harmonious with our brand palette.
+
+### Tapio: The Orchestrator
+
+<div class="color-grid">
+  {tapioColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Immigration & Legal Processes
+
+#### Ilmarinen: The Craftsman of Documentation
+
+<div class="color-grid">
+  {ilmarinenColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Economic Integration
+
+#### Sampo: The Prosperity Guide
+
+<div class="color-grid">
+  {sampoColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+#### Pellervo: The Harvest Guide
+
+<div class="color-grid">
+  {pellervoColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Social Services & Benefits
+
+#### Rauni: The Prosperity Guardian
+
+<div class="color-grid">
+  {rauniColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+#### Otso: The Housing Guardian
+
+<div class="color-grid">
+  {otsoColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Education & Language
+
+#### Agricola: The Language Mentor
+
+<div class="color-grid">
+  {agricolaColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+#### Louhi: The Cultural Guide
+
+<div class="color-grid">
+  {louhiColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Health & Wellbeing
+
+#### Mielikki: The Healer
+
+<div class="color-grid">
+  {mielikkiColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+#### Lempi: The Wellbeing Supporter
+
+<div class="color-grid">
+  {lempiColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+### Practical Living
+
+#### Ahti: The Navigator
+
+<div class="color-grid">
+  {ahtiColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+#### Kokko: The Regional Expert
+
+<div class="color-grid">
+  {kokkoColors.map((color) => (
+    <ColorChip name={color.name} color={color.color} description={color.description} />
+  ))}
+</div>
+
+## Typography
+
+Our typography choices prioritize clarity and accessibility, supporting our mission of making information easily understandable.
+
+:::note[Typography Principle]
+Typography selections in the Finntegrate project prioritize legibility across devices, language support, and accessibility to create a more inclusive user experience.
+:::
+
+### Primary Font: Inter
+
+Inter is our primary typeface for all digital and print applications. Its clean, modern design ensures readability across multiple languages and devices.
+
+```css
+/* Example usage */
+font-family: 'Inter', sans-serif;
+```
+
+:::tip[Implementation]
+Add Inter to your project by including the font in your CSS or using Google Fonts:
+
+```html
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+:::
+
+### Font Weights
+
+- **Regular (400)**: Primary body text
+- **Medium (500)**: Subheadings and emphasis
+- **SemiBold (600)**: Section headings and UI elements
+- **Bold (700)**: Main headings and key information
+
+:::caution[Weight Usage]
+Limit font weight variations within a single interface to maintain visual harmony. Using too many weights can create visual noise and reduce readability.
+:::
+
+### Typography Hierarchy
+
+- **H1**: 32px/2rem, Inter Bold, used for page titles
+- **H2**: 24px/1.5rem, Inter SemiBold, used for major sections
+- **H3**: 20px/1.25rem, Inter SemiBold, used for subsections
+- **Body**: 16px/1rem, Inter Regular, used for main content
+- **Small/Caption**: 14px/0.875rem, Inter Regular, used for supplementary information
+
+:::tip[Responsive Typography]
+Use relative units (rem/em) rather than fixed pixels to ensure typography scales appropriately across different screen sizes and respects user font size preferences.
+
+```css
+h1 {
+  font-size: 2rem; /* Instead of 32px */
+  line-height: 1.2;
+}
+```
+
+:::
+
+### Persona Typography Treatments
+
+While maintaining our primary font family (Inter), each persona may have slight variations in weight or style:
+
+- **Main Orchestrator (Tapio)**: Inter SemiBold for headings
+- **Immigration & Legal (Ilmarinen)**: Inter Medium, slightly condensed
+- **Economic (Sampo & Pellervo)**: Inter Regular with generous spacing
+- **Social Services (Rauni & Otso)**: Inter Medium with rounded feel
+- **Education (Agricola & Louhi)**: Inter Regular with increased line height
+- **Health (Mielikki & Lempi)**: Inter Light with gentle curves
+- **Practical (Ahti & Kokko)**: Inter Regular with navigation-inspired spacing
+
+:::note[Persona Consistency]
+While each persona has subtle typographic variations, maintain the core Inter font family across all personas to ensure brand cohesion. The variations should be subtle enough that users perceive a difference in "personality" without noticing explicit font changes.
+:::
+
+## Logo Guidelines
+
+:::note[Logo Status]
+The Finntegrate project does not currently have an official logo. Logo design will be part of a future brand development phase.
+:::
+
+:::tip[Temporary Visual Identity]
+Until an official logo is created, use the project name "Finntegrate" set in Inter Bold with the Nordic Blue (#0053A5) color for any needed visual identification. Maintain consistent typography and color usage across materials.
+:::
+
+## Visual Elements
+
+### Iconography
+
+- Use simple, clear line icons with consistent stroke width
+- Keep icons accessible by maintaining a minimum size of 24x24 pixels
+- Use Nordic Blue as the primary icon color, with accent colors used sparingly
+- For persona-specific icons, use the persona's primary color
+
+:::tip[Icon Resources]
+Finntegrate uses [Iconify](https://icon-sets.iconify.design/) for our icon system, specifically:
+
+- [Material Design Icons](https://icon-sets.iconify.design/mdi/)
+- [Material Symbols](https://icon-sets.iconify.design/material-symbols/)
+
+These libraries provide thousands of freely licensed icons that maintain a consistent design language across the project. When implementing:
+
+```jsx
+// Example with a component-based approach
+import { Icon } from '@iconify/react';
+
+// Material Design Icons
+<Icon icon="mdi:account" />
+
+// Material Symbols
+<Icon icon="material-symbols:settings" />
+```
+
+Iconify provides optimal SVG delivery and excellent browser support.
+:::
+
+### Illustration Style
+
+- Illustrations should be simple, clear, and supportive of the content
+- Use a consistent style inspired by Finnish design tradition
+- Maintain a balanced color palette drawing from our brand colors
+- Incorporate subtle mythological elements when appropriate
+
+## Implementation Guidelines
+
+### Interface Elements
+
+When implementing persona-specific UI elements:
+
+1. Use the primary color for main persona identification
+2. Apply secondary colors for backgrounds and supporting elements
+3. Reserve accent colors for interactive elements and highlights
+4. Include appropriate iconography related to the persona's domain
+
+### Transitions
+
+When transitioning between personas in the interface:
+
+1. Maintain smooth color transitions to avoid jarring changes
+2. Signal persona changes with subtle animation or icon shifts
+3. Ensure all text remains readable during and after transitions
+4. Keep consistent layout structure across persona changes
+
+### Accessibility Considerations
+
+All persona color schemes must:
+
+1. Maintain WCAG 2.1 AA contrast standards for text legibility
+2. Offer sufficient distinction between interactive and non-interactive elements
+3. Function properly in high-contrast mode
+4. Include alternative text descriptions for all persona-related visual elements
+
+:::note[Finntegrate Accessibility First]
+Since Finntegrate aims to support immigrants navigating complex systems, accessibility is not just a technical requirement but a core project value. When making design decisions, always prioritize inclusivity and ease of use for people with diverse needs and abilities.
+
+Consider testing with:
+
+- Screen readers (VoiceOver, NVDA, JAWS)
+- Keyboard-only navigation
+- Color blindness simulators
+- Text-only browsers
+  :::
+
+### Working with Multiple Personas
+
+When multiple personas appear together:
+
+1. Maintain Tapio's colors as the primary orchestrating presence
+2. Use persona colors sparingly to avoid visual overload
+3. Consider using neutral backgrounds when multiple personas are active
+4. Ensure clear visual hierarchy with the most relevant persona emphasized
