@@ -16,8 +16,12 @@ const colorObj = Color(colorValue);
 
 // Derive all required color formats
 const hex = colorObj.hex();
-const rgb = `${colorObj.red()}, ${colorObj.green()}, ${colorObj.blue()}`;
-const cmyk = colorObj.cmyk().array().map(Math.round).join(", ");
+const rgb = colorObj.rgb().array().map(Math.round).join(", "); // Rounded whole numbers
+const cmyk = colorObj
+  .cmyk()
+  .array()
+  .map((v) => Math.round(v) + "%")
+  .join(", "); // Percentages
 
 // Calculate contrasting text color (white or black) based on the background color
 // Using a simple approach based on the color's luminosity
