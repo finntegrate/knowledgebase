@@ -1,7 +1,7 @@
 ---
 // ColorChip.astro - A reusable component for displaying color information
 // Place this file in src/components/ColorChip.astro
-import Color from "color";
+import Color from 'color';
 
 interface Props {
   name: string;
@@ -16,23 +16,20 @@ const colorObj = Color(colorValue);
 
 // Derive all required color formats
 const hex = colorObj.hex();
-const rgb = colorObj.rgb().array().map(Math.round).join(", "); // Rounded whole numbers
+const rgb = colorObj.rgb().array().map(Math.round).join(', '); // Rounded whole numbers
 const cmyk = colorObj
   .cmyk()
   .array()
-  .map((v) => Math.round(v) + "%")
-  .join(", "); // Percentages
+  .map((v) => Math.round(v) + '%')
+  .join(', '); // Percentages
 
 // Calculate contrasting text color (white or black) based on the background color
 // Using a simple approach based on the color's luminosity
-const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
+const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
 ---
 
 <div class="color-chip">
-  <div
-    class="color-preview"
-    style={`background-color: ${hex}; color: ${textColor};`}
-  >
+  <div class="color-preview" style={`background-color: ${hex}; color: ${textColor};`}>
     <span class="color-name">{name}</span>
   </div>
   <div class="color-info">
@@ -83,6 +80,9 @@ const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
     margin-top: 0;
     padding: 1rem;
     background-color: var(--sl-color-gray-1);
+    flex-grow: 1; /* This makes the color-info section expand to fill available space */
+    display: flex;
+    flex-direction: column;
   }
 
   .color-value {
@@ -114,9 +114,7 @@ const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
   .color-description {
     font-size: 0.9rem;
     margin: 0;
-    color: var(
-      --sl-color-black
-    ); /* Maximum contrast for better accessibility */
+    color: var(--sl-color-black); /* Maximum contrast for better accessibility */
   }
 </style>
 
