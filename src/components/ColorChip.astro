@@ -1,0 +1,129 @@
+---
+// ColorChip.astro - A reusable component for displaying color information
+// Place this file in src/components/ColorChip.astro
+import Color from 'color';
+
+interface Props {
+  name: string;
+  color: string; // Single color input (hex, rgb, named color, etc.)
+  description?: string;
+}
+
+const { name, color: colorValue, description } = Astro.props;
+
+// Create a color object using the provided value
+const colorObj = Color(colorValue);
+
+// Derive all required color formats
+const hex = colorObj.hex();
+const rgb = `${colorObj.red()}, ${colorObj.green()}, ${colorObj.blue()}`;
+const cmyk = colorObj.cmyk().array().map(Math.round).join(', ');
+
+// Calculate contrasting text color for readability
+// Using the Color library's contrast functionality
+const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
+---
+
+<div class="color-chip">
+  <div
+    class="color-preview"
+    style={`background-color: ${hex}; color: ${textColor};`}
+  >
+    <h3>{name}</h3>
+  </div>
+  <div class="color-info">
+    <div class="color-values">
+      <div class="color-value">
+        <span class="value-label">HEX:</span>
+        <code class="value-code">{hex}</code>
+      </div>
+      <div class="color-value">
+        <span class="value-label">RGB:</span>
+        <code class="value-code">{rgb}</code>
+      </div>
+      <div class="color-value">
+        <span class="value-label">CMYK:</span>
+        <code class="value-code">{cmyk}</code>
+      </div>
+    </div>
+    {description && <p class="color-description">{description}</p>}
+  </div>
+</div>
+
+<style>
+  .color-chip {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--sl-color-gray-5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 100%;
+  }
+
+  .color-preview {
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .color-preview h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .color-info {
+    padding: 1rem;
+    background-color: var(--sl-color-gray-1);
+  }
+
+  .color-values {
+    margin-bottom: 0.75rem;
+  }
+
+  .color-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .value-label {
+    font-weight: 600;
+    color: var(--sl-color-gray-5);
+  }
+
+  .value-code {
+    font-family: var(--sl-font-mono);
+    color: var(--sl-color-black);
+    background-color: var(--sl-color-gray-1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 100px;
+    text-align: right;
+    border: 1px solid var(--sl-color-gray-4);
+  }
+
+  .color-description {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--sl-color-gray-7);
+  }
+</style>
+
+<style is:global>
+  /* Add this global style to your ColorChip component */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+</style>
