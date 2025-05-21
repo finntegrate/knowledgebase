@@ -5,6 +5,23 @@ description: Brand colors, typography, and styling guidelines for the Finntegrat
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
 import ColorChip from "../../../components/ColorChip.astro";
+import {
+  primaryColors,
+  secondaryColors,
+  accentColors,
+  tapioColors,
+  ilmarinenColors,
+  sampoColors,
+  pellervoColors,
+  rauniColors,
+  otsoColors,
+  agricolaColors,
+  louhiColors,
+  mielikkiColors,
+  lempiColors,
+  ahtiColors,
+  kokkoColors,
+} from "../../../data/brandColors.js";
 
 These guidelines ensure consistent visual representation across all Finntegrate materials. Following these standards helps establish a cohesive brand identity that reflects our mission of providing clear, accessible support to immigrants navigating Finnish bureaucracy.
 
@@ -15,61 +32,37 @@ Our color palette is inspired by Finland's natural landscape and cultural herita
 ### Primary Colors
 
 <div class="color-grid">
-  <ColorChip
-    name="Nordic Blue"
-    color="#0053A5"
-    description="Main brand color, used for primary elements, headers, and key messaging"
-  />
-  <ColorChip
-    name="White Snow"
-    color="#FFFFFF"
-    description="Background color for most applications, representing clarity and simplicity"
-  />
-  <ColorChip
-    name="Midnight Forest"
-    color="#263238"
-    description="Used for text and key UI elements requiring emphasis"
-  />
+  {primaryColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Secondary Colors
 
 <div class="color-grid">
-  <ColorChip
-    name="Lake Blue"
-    color="#76B7ED"
-    description="Used for supporting elements, backgrounds, and highlights"
-  />
-  <ColorChip
-    name="Birch Bark"
-    color="#F5F5F5"
-    description="Secondary background color, used for content separation"
-  />
-  <ColorChip
-    name="Forest Green"
-    color="#155724"
-    description="Used for success messages and environmental themes"
-  />
+  {secondaryColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Accent Colors
 
 <div class="color-grid">
-  <ColorChip
-    name="Aurora Red"
-    color="#E57373"
-    description="Used sparingly for alerts, errors, and important notifications"
-  />
-  <ColorChip
-    name="Amber Gold"
-    color="#FFD54F"
-    description="Used for highlights, warnings, and special elements"
-  />
-  <ColorChip
-    name="Berry Purple"
-    color="#7B1FA2"
-    description="Used for special features and selected states"
-  />
+  {accentColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Color Usage
@@ -122,21 +115,13 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 ### Tapio: The Orchestrator
 
 <div class="color-grid">
-  <ColorChip
-    name="Forest Guardian"
-    color="#2E7D32"
-    description="Primary color representing Tapio's forest domain and wisdom"
-  />
-  <ColorChip
-    name="Pine Needle"
-    color="#81C784"
-    description="Secondary color for Tapio interface elements"
-  />
-  <ColorChip
-    name="Moss Accent"
-    color="#388E3C"
-    description="Accent color for Tapio interactive elements"
-  />
+  {tapioColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Immigration & Legal Processes
@@ -144,21 +129,13 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 #### Ilmarinen: The Craftsman of Documentation
 
 <div class="color-grid">
-  <ColorChip
-    name="Smith's Iron"
-    color="#455A64"
-    description="Primary color representing Ilmarinen's precision and craftsmanship"
-  />
-  <ColorChip
-    name="Forge Silver"
-    color="#B0BEC5"
-    description="Secondary color for Ilmarinen interface elements"
-  />
-  <ColorChip
-    name="Ember Glow"
-    color="#FF8A65"
-    description="Accent color representing the forge fire and determination"
-  />
+  {ilmarinenColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Economic Integration
@@ -166,41 +143,25 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 #### Sampo: The Prosperity Guide
 
 <div class="color-grid">
-  <ColorChip
-    name="Gold Prosperity"
-    color="#FFC107"
-    description="Primary color representing abundance and opportunity"
-  />
-  <ColorChip
-    name="Wheat Field"
-    color="#FFE082"
-    description="Secondary color for Sampo interface elements"
-  />
-  <ColorChip
-    name="Amber Wealth"
-    color="#FFB300"
-    description="Accent color for interactive elements and highlights"
-  />
+  {sampoColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 #### Pellervo: The Harvest Guide
 
 <div class="color-grid">
-  <ColorChip
-    name="Fertile Earth"
-    color="#795548"
-    description="Primary color representing cultivation and growth"
-  />
-  <ColorChip
-    name="Autumn Grain"
-    color="#D7CCC8"
-    description="Secondary color for Pellervo interface elements"
-  />
-  <ColorChip
-    name="Seed Sprout"
-    color="#8D6E63"
-    description="Accent color for interactive elements"
-  />
+  {pellervoColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Social Services & Benefits
@@ -208,41 +169,25 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 #### Rauni: The Prosperity Guardian
 
 <div class="color-grid">
-  <ColorChip
-    name="Rowan Berry"
-    color="#E57373"
-    description="Primary color representing protection and nurturing"
-  />
-  <ColorChip
-    name="Dawn Light"
-    color="#FFCDD2"
-    description="Secondary color for Rauni interface elements"
-  />
-  <ColorChip
-    name="Protective Shield"
-    color="#EF5350"
-    description="Accent color for interactive elements"
-  />
+  {rauniColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 #### Otso: The Housing Guardian
 
 <div class="color-grid">
-  <ColorChip
-    name="Bear Brown"
-    color="#795548"
-    description="Primary color representing shelter and protection"
-  />
-  <ColorChip
-    name="Warm Hearth"
-    color="#BCAAA4"
-    description="Secondary color for Otso interface elements"
-  />
-  <ColorChip
-    name="Forest Honey"
-    color="#A1887F"
-    description="Accent color for interactive elements"
-  />
+  {otsoColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Education & Language
@@ -250,41 +195,25 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 #### Agricola: The Language Mentor
 
 <div class="color-grid">
-  <ColorChip
-    name="Manuscript Blue"
-    color="#1976D2"
-    description="Primary color representing knowledge and education"
-  />
-  <ColorChip
-    name="Parchment"
-    color="#BBDEFB"
-    description="Secondary color for Agricola interface elements"
-  />
-  <ColorChip
-    name="Ink Well"
-    color="#1565C0"
-    description="Accent color for interactive elements"
-  />
+  {agricolaColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 #### Louhi: The Cultural Guide
 
 <div class="color-grid">
-  <ColorChip
-    name="Northern Wisdom"
-    color="#7B1FA2"
-    description="Primary color representing cultural knowledge and authority"
-  />
-  <ColorChip
-    name="Midwinter Sky"
-    color="#E1BEE7"
-    description="Secondary color for Louhi interface elements"
-  />
-  <ColorChip
-    name="Aurora Glow"
-    color="#9C27B0"
-    description="Accent color for interactive elements"
-  />
+  {louhiColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Health & Wellbeing
@@ -292,41 +221,25 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 #### Mielikki: The Healer
 
 <div class="color-grid">
-  <ColorChip
-    name="Healing Herb"
-    color="#43A047"
-    description="Primary color representing health and recovery"
-  />
-  <ColorChip
-    name="Forest Medicine"
-    color="#C8E6C9"
-    description="Secondary color for Mielikki interface elements"
-  />
-  <ColorChip
-    name="Vital Energy"
-    color="#2E7D32"
-    description="Accent color for interactive elements"
-  />
+  {mielikkiColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 #### Lempi: The Wellbeing Supporter
 
 <div class="color-grid">
-  <ColorChip
-    name="Heart Rose"
-    color="#EC407A"
-    description="Primary color representing love and emotional support"
-  />
-  <ColorChip
-    name="Comfort Pink"
-    color="#F8BBD0"
-    description="Secondary color for Lempi interface elements"
-  />
-  <ColorChip
-    name="Warm Embrace"
-    color="#D81B60"
-    description="Accent color for interactive elements"
-  />
+  {lempiColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 ### Practical Living
@@ -334,61 +247,26 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 #### Ahti: The Navigator
 
 <div class="color-grid">
-  <ColorChip
-    name="Ocean Blue"
-    color="#0288D1"
-    description="Primary color representing waters and practical guidance"
-  />
-  <ColorChip
-    name="Sea Foam"
-    color="#B3E5FC"
-    description="Secondary color for Ahti interface elements"
-  />
-  <ColorChip
-    name="Deep Current"
-    color="#0277BD"
-    description="Accent color for interactive elements"
-  />
+  {ahtiColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
 
 #### Kokko: The Regional Expert
 
 <div class="color-grid">
-  <ColorChip
-    name="Eagle Sight"
-    color="#FB8C00"
-    description="Primary color representing broad perspective and local knowledge"
-  />
-  <ColorChip
-    name="Sky View"
-    color="#FFE0B2"
-    description="Secondary color for Kokko interface elements"
-  />
-  <ColorChip
-    name="Soaring Wing"
-    color="#F57C00"
-    description="Accent color for interactive elements"
-  />
+  {kokkoColors.map((color) => (
+    <ColorChip
+      name={color.name}
+      color={color.color}
+      description={color.description}
+    />
+  ))}
 </div>
-
-## Persona Visual Elements
-
-### Icons and Imagery
-
-Each persona should be represented by icons and visual elements that reflect their mythological significance:
-
-- **Tapio**: Forest elements, trees, particularly pine trees
-- **Ilmarinen**: Tools, anvil, craftsman symbols
-- **Sampo**: Coins, prosperity symbols, cornucopia
-- **Pellervo**: Seeds, sprouts, harvested grain
-- **Rauni**: Rowan tree, berries, protective symbols
-- **Otso**: Bear motifs, home/den imagery
-- **Agricola**: Books, manuscripts, quill and ink
-- **Louhi**: Cultural symbols, northern lights
-- **Mielikki**: Healing plants, forest medicine
-- **Lempi**: Heart symbols, caring hands
-- **Ahti**: Water symbols, waves, navigation elements
-- **Kokko**: Eagle imagery, maps, regional symbols
 
 ## Typography
 
