@@ -108,6 +108,16 @@ Our color palette is inspired by Finland's natural landscape and cultural herita
   </TabItem>
 </Tabs>
 
+:::danger[Accessibility Compliance]
+Always verify your color combinations meet accessibility standards. Tools like the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) can help ensure compliance.
+
+Remember that:
+
+- Text must have a contrast ratio of at least 4.5:1 (AA) or 7:1 (AAA)
+- Large text (18pt+) must have a contrast ratio of at least 3:1 (AA) or 4.5:1 (AAA)
+- Interactive elements must have a contrast ratio of at least 3:1 against adjacent colors
+  :::
+
 ## Persona Colors
 
 Our multi-agent system features personas inspired by Finnish mythology. Each has a distinct color identity while remaining harmonious with our brand palette.
@@ -272,6 +282,10 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 Our typography choices prioritize clarity and accessibility, supporting our mission of making information easily understandable.
 
+:::note[Typography Principle]
+Typography selections in the Finntegrate project prioritize legibility across devices, language support, and accessibility to create a more inclusive user experience.
+:::
+
 ### Primary Font: Inter
 
 Inter is our primary typeface for all digital and print applications. Its clean, modern design ensures readability across multiple languages and devices.
@@ -281,12 +295,28 @@ Inter is our primary typeface for all digital and print applications. Its clean,
 font-family: "Inter", sans-serif;
 ```
 
+:::tip[Implementation]
+Add Inter to your project by including the font in your CSS or using Google Fonts:
+
+```html
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+```
+
+:::
+
 ### Font Weights
 
 - **Regular (400)**: Primary body text
 - **Medium (500)**: Subheadings and emphasis
 - **SemiBold (600)**: Section headings and UI elements
 - **Bold (700)**: Main headings and key information
+
+:::caution[Weight Usage]
+Limit font weight variations within a single interface to maintain visual harmony. Using too many weights can create visual noise and reduce readability.
+:::
 
 ### Typography Hierarchy
 
@@ -295,6 +325,18 @@ font-family: "Inter", sans-serif;
 - **H3**: 20px/1.25rem, Inter SemiBold, used for subsections
 - **Body**: 16px/1rem, Inter Regular, used for main content
 - **Small/Caption**: 14px/0.875rem, Inter Regular, used for supplementary information
+
+:::tip[Responsive Typography]
+Use relative units (rem/em) rather than fixed pixels to ensure typography scales appropriately across different screen sizes and respects user font size preferences.
+
+```css
+h1 {
+  font-size: 2rem; /* Instead of 32px */
+  line-height: 1.2;
+}
+```
+
+:::
 
 ### Persona Typography Treatments
 
@@ -308,9 +350,19 @@ While maintaining our primary font family (Inter), each persona may have slight 
 - **Health (Mielikki & Lempi)**: Inter Light with gentle curves
 - **Practical (Ahti & Kokko)**: Inter Regular with navigation-inspired spacing
 
+:::note[Persona Consistency]
+While each persona has subtle typographic variations, maintain the core Inter font family across all personas to ensure brand cohesion. The variations should be subtle enough that users perceive a difference in "personality" without noticing explicit font changes.
+:::
+
 ## Logo Guidelines
 
-[Logo guidelines will be added in a future update]
+:::note[Logo Status]
+The Finntegrate project does not currently have an official logo. Logo design will be part of a future brand development phase.
+:::
+
+:::tip[Temporary Visual Identity]
+Until an official logo is created, use the project name "Finntegrate" set in Inter Bold with the Nordic Blue (#0053A5) color for any needed visual identification. Maintain consistent typography and color usage across materials.
+:::
 
 ## Visual Elements
 
@@ -320,6 +372,28 @@ While maintaining our primary font family (Inter), each persona may have slight 
 - Keep icons accessible by maintaining a minimum size of 24x24 pixels
 - Use Nordic Blue as the primary icon color, with accent colors used sparingly
 - For persona-specific icons, use the persona's primary color
+
+:::tip[Icon Resources]
+Finntegrate uses [Iconify](https://icon-sets.iconify.design/) for our icon system, specifically:
+
+- [Material Design Icons](https://icon-sets.iconify.design/mdi/)
+- [Material Symbols](https://icon-sets.iconify.design/material-symbols/)
+
+These libraries provide thousands of freely licensed icons that maintain a consistent design language across the project. When implementing:
+
+```jsx
+// Example with a component-based approach
+import { Icon } from '@iconify/react';
+
+// Material Design Icons
+<Icon icon="mdi:account" />
+
+// Material Symbols
+<Icon icon="material-symbols:settings" />
+```
+
+Iconify provides optimal SVG delivery and excellent browser support.
+:::
 
 ### Illustration Style
 
@@ -356,6 +430,17 @@ All persona color schemes must:
 2. Offer sufficient distinction between interactive and non-interactive elements
 3. Function properly in high-contrast mode
 4. Include alternative text descriptions for all persona-related visual elements
+
+:::note[Finntegrate Accessibility First]
+Since Finntegrate aims to support immigrants navigating complex systems, accessibility is not just a technical requirement but a core project value. When making design decisions, always prioritize inclusivity and ease of use for people with diverse needs and abilities.
+
+Consider testing with:
+
+- Screen readers (VoiceOver, NVDA, JAWS)
+- Keyboard-only navigation
+- Color blindness simulators
+- Text-only browsers
+  :::
 
 ### Working with Multiple Personas
 
