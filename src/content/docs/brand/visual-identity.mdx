@@ -3,8 +3,8 @@ title: Visual Identity Guidelines
 description: Brand colors, typography, and styling guidelines for the Finntegrate project
 ---
 
-import { Tabs, TabItem } from "@astrojs/starlight/components";
-import ColorChip from "../../../components/ColorChip.astro";
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import ColorChip from '../../../components/ColorChip.astro';
 import {
   primaryColors,
   secondaryColors,
@@ -21,7 +21,7 @@ import {
   lempiColors,
   ahtiColors,
   kokkoColors,
-} from "../../../data/brandColors.js";
+} from '../../../data/brandColors.js';
 
 These guidelines ensure consistent visual representation across all Finntegrate materials. Following these standards helps establish a cohesive brand identity that reflects our mission of providing clear, accessible support to immigrants navigating Finnish bureaucracy.
 
@@ -33,11 +33,7 @@ Our color palette is inspired by Finland's natural landscape and cultural herita
 
 <div class="color-grid">
   {primaryColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -45,11 +41,7 @@ Our color palette is inspired by Finland's natural landscape and cultural herita
 
 <div class="color-grid">
   {secondaryColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -57,11 +49,7 @@ Our color palette is inspired by Finland's natural landscape and cultural herita
 
 <div class="color-grid">
   {accentColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -69,42 +57,39 @@ Our color palette is inspired by Finland's natural landscape and cultural herita
 
 <Tabs>
   <TabItem label="Digital Applications">
-
-    - Use Nordic Blue for main navigation, buttons, and key UI elements - Text
-    should be Midnight Forest on light backgrounds, White Snow on dark
-    backgrounds
-    - Links should be Lake Blue, changing to Nordic Blue on hover
-    - Reserve accent colors for notifications and interactive elements
-
+    <ul>
+      <li>Use Nordic Blue for main navigation, buttons, and key UI elements</li>
+      <li>Text should be Midnight Forest on light backgrounds, White Snow on dark backgrounds</li>
+      <li>Links should be Lake Blue, changing to Nordic Blue on hover</li>
+      <li>Reserve accent colors for notifications and interactive elements</li>
+    </ul>
   </TabItem>
   <TabItem label="Print Materials">
-
-    - Nordic Blue serves as the primary identifier
-    - Large areas can use Birch
-    Bark or White Snow as backgrounds
-    - Lake Blue works well for supporting
-    graphic elements
-    - Use color sparingly and purposefully
-
+    <ul>
+      <li>Nordic Blue serves as the primary identifier</li>
+      <li>Large areas can use Birch Bark or White Snow as backgrounds</li>
+      <li>Lake Blue works well for supporting graphic elements</li>
+      <li>Use color sparingly and purposefully</li>
+    </ul>
   </TabItem>
   <TabItem label="Accessibility">
-
-    - Maintain WCAG 2.1 AA contrast standards (minimum 4.5:1 for normal text,
-    3:1 for large text).
-    - For example, "Nordic Blue" (#0053A5) on "White Snow"
-    (#FFFFFF) has a contrast ratio of 7.55:1, which is excellent and meets AA
-    and AAA guidelines.
-    - Conversely, "Lake Blue" (#76B7ED) on "White Snow"
-    (#FFFFFF) has a contrast ratio of 2.15:1. This combination is not acceptable
-    for normal-sized body text as it fails the AA standard, but it could be
-    acceptable for large text (e.g., headings).
-    - Never use color as the only
-    indicator of meaning.
-    - Provide sufficient contrast between text and
-    backgrounds.
-    - Test color combinations with accessibility tools to ensure
-    compliance.
-
+    <ul>
+      <li>
+        Maintain WCAG 2.1 AA contrast standards (minimum 4.5:1 for normal text, 3:1 for large text).
+      </li>
+      <li>
+        For example, "Nordic Blue" (#0053A5) on "White Snow" (#FFFFFF) has a contrast ratio of
+        7.55:1, which is excellent and meets AA and AAA guidelines.
+      </li>
+      <li>
+        Conversely, "Lake Blue" (#76B7ED) on "White Snow" (#FFFFFF) has a contrast ratio of 2.15:1.
+        This combination is not acceptable for normal-sized body text as it fails the AA standard,
+        but it could be acceptable for large text (e.g., headings).
+      </li>
+      <li>Never use color as the only indicator of meaning.</li>
+      <li>Provide sufficient contrast between text and backgrounds.</li>
+      <li>Test color combinations with accessibility tools to ensure compliance.</li>
+    </ul>
   </TabItem>
 </Tabs>
 
@@ -126,11 +111,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {tapioColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -140,11 +121,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {ilmarinenColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -154,11 +131,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {sampoColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -166,11 +139,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {pellervoColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -180,11 +149,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {rauniColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -192,11 +157,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {otsoColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -206,11 +167,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {agricolaColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -218,11 +175,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {louhiColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -232,11 +185,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {mielikkiColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -244,11 +193,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {lempiColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -258,11 +203,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {ahtiColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -270,11 +211,7 @@ Our multi-agent system features personas inspired by Finnish mythology. Each has
 
 <div class="color-grid">
   {kokkoColors.map((color) => (
-    <ColorChip
-      name={color.name}
-      color={color.color}
-      description={color.description}
-    />
+    <ColorChip name={color.name} color={color.color} description={color.description} />
   ))}
 </div>
 
@@ -292,7 +229,7 @@ Inter is our primary typeface for all digital and print applications. Its clean,
 
 ```css
 /* Example usage */
-font-family: "Inter", sans-serif;
+font-family: 'Inter', sans-serif;
 ```
 
 :::tip[Implementation]
