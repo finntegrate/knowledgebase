@@ -32,19 +32,17 @@ const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
     <span class="color-name">{name}</span>
   </div>
   <div class="color-info">
-    <div class="color-values">
-      <div class="color-value">
-        <span class="value-label">HEX:</span>
-        <code class="value-code">{hex}</code>
-      </div>
-      <div class="color-value">
-        <span class="value-label">RGB:</span>
-        <code class="value-code">{rgb}</code>
-      </div>
-      <div class="color-value">
-        <span class="value-label">CMYK:</span>
-        <code class="value-code">{cmyk}</code>
-      </div>
+    <div class="color-value">
+      <span class="value-label">HEX:</span>
+      <code class="value-code">{hex}</code>
+    </div>
+    <div class="color-value">
+      <span class="value-label">RGB:</span>
+      <code class="value-code">{rgb}</code>
+    </div>
+    <div class="color-value">
+      <span class="value-label">CMYK:</span>
+      <code class="value-code">{cmyk}</code>
     </div>
     {description && <p class="color-description">{description}</p>}
   </div>
@@ -81,10 +79,6 @@ const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
     background-color: var(--sl-color-gray-1);
   }
 
-  .color-values {
-    margin-bottom: 0.75rem;
-  }
-
   .color-value {
     display: flex;
     justify-content: space-between;
@@ -95,7 +89,7 @@ const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
 
   .value-label {
     font-weight: 600;
-    color: var(--sl-color-gray-5);
+    color: var(--sl-color-black); /* Much better contrast with background */
   }
 
   .value-code {
@@ -114,7 +108,9 @@ const textColor = colorObj.isLight() ? "#000000" : "#FFFFFF";
   .color-description {
     font-size: 0.9rem;
     margin: 0;
-    color: var(--sl-color-gray-7);
+    color: var(
+      --sl-color-black
+    ); /* Maximum contrast for better accessibility */
   }
 </style>
 
