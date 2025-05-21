@@ -18,6 +18,7 @@ export default defineConfig({
 						{ label: 'Context and Opportunities', slug: 'project/context-and-opportunities' },
 					],
 				},
+				{ label: 'Brand', autogenerate: { directory: 'brand' }, },
 				{
 					label: 'Research',
 					items: [
