@@ -26,26 +26,36 @@ const cmyk = colorObj
 // Calculate contrasting text color (white or black) based on the background color
 // Using a simple approach based on the color's luminosity
 const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
+
+// Generate a unique ID for this color chip's details
+const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <div class="color-chip">
-  <div class="color-preview" style={`background-color: ${hex}; color: ${textColor};`}>
+  <div
+    class="color-preview"
+    style={`background-color: ${hex}; color: ${textColor};`}
+    data-details-id={detailsId}
+  >
     <span class="color-name">{name}</span>
+    <span class="expand-icon">▼</span>
   </div>
-  <div class="color-info">
-    <div class="color-value">
-      <span class="value-label">HEX:</span>
-      <code class="value-code">{hex}</code>
+  <div id={detailsId} class="color-details">
+    <div class="color-info">
+      <div class="color-value">
+        <span class="value-label">HEX:</span>
+        <code class="value-code">{hex}</code>
+      </div>
+      <div class="color-value">
+        <span class="value-label">RGB:</span>
+        <code class="value-code">{rgb}</code>
+      </div>
+      <div class="color-value">
+        <span class="value-label">CMYK:</span>
+        <code class="value-code">{cmyk}</code>
+      </div>
+      {description && <p class="color-description">{description}</p>}
     </div>
-    <div class="color-value">
-      <span class="value-label">RGB:</span>
-      <code class="value-code">{rgb}</code>
-    </div>
-    <div class="color-value">
-      <span class="value-label">CMYK:</span>
-      <code class="value-code">{cmyk}</code>
-    </div>
-    {description && <p class="color-description">{description}</p>}
   </div>
 </div>
 
@@ -54,11 +64,12 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     display: flex;
     flex-direction: column;
     border-radius: 0.5rem;
-    overflow: hidden;
+    overflow: visible; /* Changed from hidden to visible to allow absolute positioned content to show */
     border: 1px solid var(--sl-color-gray-5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    height: 100%;
+    height: 100px; /* Fixed height for consistent grid layout */
     margin: 0;
+    position: relative; /* Enable absolute positioning for children */
   }
 
   .color-preview {
@@ -67,7 +78,15 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     min-height: 5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    height: 100%; /* Take full height of parent */
+  }
+
+  .color-preview:hover {
+    filter: brightness(0.95);
   }
 
   .color-name {
@@ -76,13 +95,47 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     font-weight: 600;
   }
 
+  .expand-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  .expand-icon.rotated {
+    transform: rotate(180deg);
+  }
+
+  .color-details {
+    position: absolute;
+    top: 100%; /* Position right below the color chip */
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease,
+      box-shadow 0.3s ease;
+    z-index: 10; /* Ensure it appears above other chips */
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  /* Adjust position for chips at the bottom of the screen */
+  .color-chip:has(.color-details.expanded) {
+    z-index: 20; /* Ensure actively expanded chip is on top */
+  }
+
+  .color-details.expanded {
+    max-height: 200px; /* Set a reasonable max height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
   .color-info {
     margin-top: 0;
     padding: 1rem;
     background-color: var(--sl-color-gray-1);
-    flex-grow: 1; /* This makes the color-info section expand to fill available space */
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--sl-color-gray-5);
+    border-top: none;
   }
 
   .color-value {
@@ -127,3 +180,37 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     margin-bottom: 2rem;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Add click event listeners to all color chip previews
+    document.querySelectorAll('.color-preview').forEach((preview) => {
+      preview.addEventListener('click', function (this: HTMLElement) {
+        const detailsId = this.getAttribute('data-details-id');
+        if (!detailsId) return;
+
+        const details = document.getElementById(detailsId);
+        const expandIcon = this.querySelector('.expand-icon');
+
+        if (!details || !expandIcon) return;
+
+        // Toggle expanded state
+        details.classList.toggle('expanded');
+        expandIcon.classList.toggle('rotated');
+
+        // Check if expanded details are visible in viewport
+        if (details.classList.contains('expanded')) {
+          setTimeout(() => {
+            const rect = details.getBoundingClientRect();
+            const isOffscreen = rect.bottom > window.innerHeight;
+
+            if (isOffscreen) {
+              // If details extend beyond viewport, scroll them into view
+              details.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+          }, 50); // Small delay to allow expansion animation to start
+        }
+      });
+    });
+  });
+</script>
