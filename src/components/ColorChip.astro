@@ -203,9 +203,41 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
 
         if (!details || !expandIcon) return;
 
-        // Toggle expanded state
-        const isExpanded = details.classList.toggle('expanded');
-        expandIcon.classList.toggle('rotated');
+        // Check if this chip is already expanded
+        const isAlreadyExpanded = details.classList.contains('expanded');
+
+        // First, close all expanded color chips
+        document.querySelectorAll('.color-details.expanded').forEach((expandedDetails) => {
+          // Skip the current one if it's already expanded (we'll handle toggling it separately)
+          if (expandedDetails.id === detailsId) return;
+
+          // Close this expanded details
+          expandedDetails.classList.remove('expanded');
+
+          // Find and update its associated preview element
+          const associatedPreview = document.querySelector(
+            `[data-details-id="${expandedDetails.id}"]`
+          );
+          if (associatedPreview) {
+            associatedPreview.setAttribute('aria-expanded', 'false');
+            const associatedIcon = associatedPreview.querySelector('.expand-icon');
+            if (associatedIcon) {
+              associatedIcon.classList.remove('rotated');
+            }
+          }
+        });
+
+        // Now toggle the state of the clicked element
+        const isExpanded = isAlreadyExpanded ? false : true;
+
+        // Apply the appropriate class based on the new state
+        if (isExpanded) {
+          details.classList.add('expanded');
+          expandIcon.classList.add('rotated');
+        } else {
+          details.classList.remove('expanded');
+          expandIcon.classList.remove('rotated');
+        }
 
         // Update ARIA attributes
         this.setAttribute('aria-expanded', isExpanded.toString());
