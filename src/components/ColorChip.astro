@@ -26,13 +26,25 @@ const cmyk = colorObj
 // Calculate contrasting text color (white or black) based on the background color
 // Using a simple approach based on the color's luminosity
 const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
+
+// Generate a unique ID for this color chip's details
+const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <div class="color-chip">
-  <div class="color-preview" style={`background-color: ${hex}; color: ${textColor};`}>
+  <div
+    class="color-preview"
+    style={`background-color: ${hex}; color: ${textColor};`}
+    data-details-id={detailsId}
+    aria-expanded="false"
+    aria-controls={detailsId}
+    tabindex="0"
+    role="button"
+  >
     <span class="color-name">{name}</span>
+    <span class="expand-icon" aria-hidden="true">▼</span>
   </div>
-  <div class="color-info">
+  <div id={detailsId} class="color-details">
     <div class="color-value">
       <span class="value-label">HEX:</span>
       <code class="value-code">{hex}</code>
@@ -54,11 +66,12 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     display: flex;
     flex-direction: column;
     border-radius: 0.5rem;
-    overflow: hidden;
+    overflow: visible; /* Changed from hidden to visible to allow absolute positioned content to show */
     border: 1px solid var(--sl-color-gray-5);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    height: 100%;
+    height: 100px; /* Fixed height for consistent grid layout */
     margin: 0;
+    position: relative; /* Enable absolute positioning for children */
   }
 
   .color-preview {
@@ -67,7 +80,15 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     min-height: 5rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+    height: 100%; /* Take full height of parent */
+  }
+
+  .color-preview:hover {
+    filter: brightness(0.95);
   }
 
   .color-name {
@@ -76,13 +97,56 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     font-weight: 600;
   }
 
-  .color-info {
-    margin-top: 0;
-    padding: 1rem;
+  .expand-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+  }
+
+  .expand-icon.rotated {
+    transform: rotate(180deg);
+  }
+
+  .color-details {
+    position: absolute;
+    top: 100%; /* Position right below the color chip */
+    left: 0;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 10; /* Ensure it appears above other chips */
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-top: 0; /* No space between chip and details */
+
+    /* Consistent padding for both collapsed and expanded states */
+    padding: 0 1rem;
     background-color: var(--sl-color-gray-1);
-    flex-grow: 1; /* This makes the color-info section expand to fill available space */
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--sl-color-gray-5);
+    border-top: none;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+
+    /* Make the content invisible when collapsed rather than removing padding */
+    opacity: 0;
+
+    /* Add smooth transitions */
+    transition:
+      max-height 0.3s ease-out,
+      opacity 0.3s ease-out,
+      padding 0.3s ease-out;
+  }
+
+  /* Adjust position for chips at the bottom of the screen */
+  .color-chip:has(.color-details.expanded) {
+    z-index: 20; /* Ensure actively expanded chip is on top */
+  }
+
+  .color-details.expanded {
+    max-height: 300px; /* Increased max height to accommodate larger content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem; /* Keep consistent padding */
+    opacity: 1; /* Make content visible when expanded */
+    /* The transitions are inherited from the base class */
   }
 
   .color-value {
@@ -91,6 +155,12 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     align-items: center;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    padding-top: 0.5rem; /* Add consistent top padding to first item */
+  }
+
+  /* Reset padding for child elements after the first one */
+  .color-value + .color-value {
+    padding-top: 0;
   }
 
   .value-label {
@@ -113,8 +183,9 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
 
   .color-description {
     font-size: 0.9rem;
-    margin: 0;
+    margin: 0.5rem 0 0.5rem 0; /* Add bottom margin to ensure spacing at the end */
     color: var(--sl-color-black); /* Maximum contrast for better accessibility */
+    box-sizing: border-box; /* Ensure padding is included in height calculations */
   }
 </style>
 
@@ -127,3 +198,98 @@ const textColor = colorObj.isLight() ? '#000000' : '#FFFFFF';
     margin-bottom: 2rem;
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Add click event listeners to all color chip previews
+    document.querySelectorAll('.color-preview').forEach((preview) => {
+      const previewEl = preview as HTMLElement;
+
+      // Add keyboard support
+      previewEl.addEventListener('keydown', function (this: HTMLElement, event: KeyboardEvent) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          try {
+            this.click(); // Reuse the click handler logic
+          } catch (err) {
+            console.error('ColorChip: Error triggering click event', err);
+          }
+        }
+      });
+
+      // Add click event listener
+      previewEl.addEventListener('click', function (this: HTMLElement) {
+        const detailsId = this.getAttribute('data-details-id');
+        if (!detailsId) {
+          console.warn('ColorChip: Missing data-details-id attribute');
+          return;
+        }
+
+        const details = document.getElementById(detailsId);
+        const expandIcon = this.querySelector('.expand-icon');
+
+        if (!details || !expandIcon) {
+          console.warn('ColorChip: Missing required DOM elements');
+          return;
+        }
+
+        // Check if this chip is already expanded
+        const isAlreadyExpanded = details.classList.contains('expanded');
+
+        // First, close all expanded color chips
+        document.querySelectorAll('.color-details.expanded').forEach((expandedDetails) => {
+          // Skip the current one if it's already expanded (we'll handle toggling it separately)
+          if (expandedDetails.id === detailsId) return;
+
+          // Close this expanded details
+          expandedDetails.classList.remove('expanded');
+
+          // Find and update its associated preview element
+          const associatedPreview = document.querySelector(
+            `[data-details-id="${expandedDetails.id}"]`
+          );
+          if (associatedPreview) {
+            associatedPreview.setAttribute('aria-expanded', 'false');
+            const associatedIcon = associatedPreview.querySelector('.expand-icon');
+            if (associatedIcon) {
+              associatedIcon.classList.remove('rotated');
+            }
+          }
+        });
+
+        // Now toggle the state of the clicked element
+        const isExpanded = isAlreadyExpanded ? false : true;
+
+        // Apply the appropriate class based on the new state
+        try {
+          if (isExpanded) {
+            details.classList.add('expanded');
+            expandIcon.classList.add('rotated');
+          } else {
+            details.classList.remove('expanded');
+            expandIcon.classList.remove('rotated');
+          }
+
+          // Update ARIA attributes
+          this.setAttribute('aria-expanded', isExpanded.toString());
+        } catch (err) {
+          console.error('ColorChip: Error updating element classes', err);
+        }
+
+        // Check if expanded details are visible in viewport
+        if (isExpanded) {
+          // Use requestAnimationFrame instead of setTimeout for better timing
+          requestAnimationFrame(() => {
+            const rect = details.getBoundingClientRect();
+            const isOffscreen = rect.bottom > window.innerHeight;
+
+            if (isOffscreen) {
+              // If details extend beyond viewport, scroll them into view
+              details.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
