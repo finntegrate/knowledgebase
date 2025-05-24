@@ -111,21 +111,21 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
     right: 0;
     max-height: 0;
     overflow: hidden;
-    transition:
-      max-height 0.3s ease,
-      box-shadow 0.3s ease;
     z-index: 10; /* Ensure it appears above other chips */
     border-radius: 0 0 0.5rem 0.5rem;
     margin-top: 0; /* No space between chip and details */
 
-    /* Moved styles from color-info */
-    padding: 0;
+    /* Consistent padding for both collapsed and expanded states */
+    padding: 0 1rem;
     background-color: var(--sl-color-gray-1);
     display: flex;
     flex-direction: column;
     border: 1px solid var(--sl-color-gray-5);
     border-top: none;
     box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+
+    /* Make the content invisible when collapsed rather than removing padding */
+    opacity: 0;
   }
 
   /* Adjust position for chips at the bottom of the screen */
@@ -136,7 +136,8 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
   .color-details.expanded {
     max-height: 300px; /* Increased max height to accommodate larger content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1rem; /* Apply padding only when expanded to prevent overflow */
+    padding: 1rem; /* Keep consistent padding */
+    opacity: 1; /* Make content visible when expanded */
   }
 
   .color-value {
@@ -145,6 +146,12 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
     align-items: center;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    padding-top: 0.5rem; /* Add consistent top padding to first item */
+  }
+
+  /* Reset padding for child elements after the first one */
+  .color-value + .color-value {
+    padding-top: 0;
   }
 
   .value-label {
@@ -167,9 +174,8 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
 
   .color-description {
     font-size: 0.9rem;
-    margin: 0.5rem 0 0 0; /* Changed to top margin for better spacing */
+    margin: 0.5rem 0 0.5rem 0; /* Add bottom margin to ensure spacing at the end */
     color: var(--sl-color-black); /* Maximum contrast for better accessibility */
-    padding-bottom: 0; /* Ensure no padding at bottom */
     box-sizing: border-box; /* Ensure padding is included in height calculations */
   }
 </style>
