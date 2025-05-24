@@ -197,16 +197,16 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
         if (!details || !expandIcon) return;
 
         // Toggle expanded state
-        details.classList.toggle('expanded');
+        const isExpanded = details.classList.toggle('expanded');
         expandIcon.classList.toggle('rotated');
 
-        // Update aria-expanded attribute
-        const isExpanded = details.classList.contains('expanded');
+        // Update ARIA attributes
         this.setAttribute('aria-expanded', isExpanded.toString());
 
         // Check if expanded details are visible in viewport
-        if (details.classList.contains('expanded')) {
-          setTimeout(() => {
+        if (isExpanded) {
+          // Use requestAnimationFrame instead of setTimeout for better timing
+          requestAnimationFrame(() => {
             const rect = details.getBoundingClientRect();
             const isOffscreen = rect.bottom > window.innerHeight;
 
@@ -214,7 +214,7 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
               // If details extend beyond viewport, scroll them into view
               details.scrollIntoView({ behavior: 'smooth', block: 'end' });
             }
-          }, 50); // Small delay to allow expansion animation to start
+          });
         }
       });
     });
