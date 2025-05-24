@@ -203,8 +203,10 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
   document.addEventListener('DOMContentLoaded', function () {
     // Add click event listeners to all color chip previews
     document.querySelectorAll('.color-preview').forEach((preview) => {
+      const previewEl = preview as HTMLElement;
+
       // Add keyboard support
-      preview.addEventListener('keydown', function (event) {
+      previewEl.addEventListener('keydown', function (this: HTMLElement, event: KeyboardEvent) {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           this.click(); // Reuse the click handler logic
@@ -212,7 +214,7 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
       });
 
       // Add click event listener
-      preview.addEventListener('click', function () {
+      previewEl.addEventListener('click', function (this: HTMLElement) {
         const detailsId = this.getAttribute('data-details-id');
         if (!detailsId) return;
 
