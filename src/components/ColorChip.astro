@@ -126,6 +126,12 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
 
     /* Make the content invisible when collapsed rather than removing padding */
     opacity: 0;
+
+    /* Add smooth transitions */
+    transition:
+      max-height 0.3s ease-out,
+      opacity 0.3s ease-out,
+      padding 0.3s ease-out;
   }
 
   /* Adjust position for chips at the bottom of the screen */
@@ -138,6 +144,7 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 1rem; /* Keep consistent padding */
     opacity: 1; /* Make content visible when expanded */
+    /* The transitions are inherited from the base class */
   }
 
   .color-value {
