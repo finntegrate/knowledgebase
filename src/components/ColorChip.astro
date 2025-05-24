@@ -209,19 +209,29 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
       previewEl.addEventListener('keydown', function (this: HTMLElement, event: KeyboardEvent) {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          this.click(); // Reuse the click handler logic
+          try {
+            this.click(); // Reuse the click handler logic
+          } catch (err) {
+            console.error('ColorChip: Error triggering click event', err);
+          }
         }
       });
 
       // Add click event listener
       previewEl.addEventListener('click', function (this: HTMLElement) {
         const detailsId = this.getAttribute('data-details-id');
-        if (!detailsId) return;
+        if (!detailsId) {
+          console.warn('ColorChip: Missing data-details-id attribute');
+          return;
+        }
 
         const details = document.getElementById(detailsId);
         const expandIcon = this.querySelector('.expand-icon');
 
-        if (!details || !expandIcon) return;
+        if (!details || !expandIcon) {
+          console.warn('ColorChip: Missing required DOM elements');
+          return;
+        }
 
         // Check if this chip is already expanded
         const isAlreadyExpanded = details.classList.contains('expanded');
@@ -251,16 +261,20 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
         const isExpanded = isAlreadyExpanded ? false : true;
 
         // Apply the appropriate class based on the new state
-        if (isExpanded) {
-          details.classList.add('expanded');
-          expandIcon.classList.add('rotated');
-        } else {
-          details.classList.remove('expanded');
-          expandIcon.classList.remove('rotated');
-        }
+        try {
+          if (isExpanded) {
+            details.classList.add('expanded');
+            expandIcon.classList.add('rotated');
+          } else {
+            details.classList.remove('expanded');
+            expandIcon.classList.remove('rotated');
+          }
 
-        // Update ARIA attributes
-        this.setAttribute('aria-expanded', isExpanded.toString());
+          // Update ARIA attributes
+          this.setAttribute('aria-expanded', isExpanded.toString());
+        } catch (err) {
+          console.error('ColorChip: Error updating element classes', err);
+        }
 
         // Check if expanded details are visible in viewport
         if (isExpanded) {
