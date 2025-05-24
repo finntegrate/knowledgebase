@@ -36,9 +36,11 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
     class="color-preview"
     style={`background-color: ${hex}; color: ${textColor};`}
     data-details-id={detailsId}
+    aria-expanded="false"
+    aria-controls={detailsId}
   >
     <span class="color-name">{name}</span>
-    <span class="expand-icon">▼</span>
+    <span class="expand-icon" aria-hidden="true">▼</span>
   </div>
   <div id={detailsId} class="color-details">
     <div class="color-info">
@@ -197,6 +199,10 @@ const detailsId = `color-details-${name.toLowerCase().replace(/\s+/g, '-')}`;
         // Toggle expanded state
         details.classList.toggle('expanded');
         expandIcon.classList.toggle('rotated');
+
+        // Update aria-expanded attribute
+        const isExpanded = details.classList.contains('expanded');
+        this.setAttribute('aria-expanded', isExpanded.toString());
 
         // Check if expanded details are visible in viewport
         if (details.classList.contains('expanded')) {
